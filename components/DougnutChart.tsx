@@ -27,6 +27,7 @@ const DougnutChart = ({ accounts }: DoughnutChartProps) => {
                     } 
                 } 
             }}
+            className="!size-40"
         />
         </div>
     );

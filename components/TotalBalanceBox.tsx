@@ -5,13 +5,13 @@ import DougnutChart from './DougnutChart'
 
 const TotalBalanceBox = ({ accounts = [], totalBanks, totalCurrentBalance }: TotlaBalanceBoxProps) => {
     return (
-        <section className='total-balance'>
+        <section className='total-balance !gap-14'>
             <div className='total-balance-chart'>
                 <DougnutChart accounts={accounts}/>
             </div>
-            <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-8'>
                 <h2 className='header-2'>
-                    {totalBanks} Bank Account{totalBanks < 2? "" : "s"}
+                    {totalBanks} Bank Account{totalBanks == 1? "" : "s"}
                 </h2>
                 <div className='flex flex-col gap-2'>
                     <p className='total-balance-label'>
