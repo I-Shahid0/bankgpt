@@ -11,14 +11,14 @@ import CustomInput from "./Form";
 import { Loader2 } from "lucide-react";
 import { authFormSchema } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import { signUp, signIn } from "@/lib/actions/user.actions";
+import { signUp, signIn, getLoggedInUser } from "@/lib/actions/user.actions";
 
 const AuthForm = ({ type }: { type: String }) => {
   const [user, setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
-  const formSchema = authFormSchema(type)
+  const formSchema = authFormSchema(`${type}`)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

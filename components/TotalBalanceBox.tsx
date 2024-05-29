@@ -5,7 +5,7 @@ import DougnutChart from './DougnutChart'
 
 const TotalBalanceBox = ({ accounts = [], totalBanks, totalCurrentBalance }: TotlaBalanceBoxProps) => {
     return (
-        <section className='total-balance !gap-14'>
+        <section className='total-balance !gap-[5rem]'>
             <div className='total-balance-chart'>
                 <DougnutChart accounts={accounts}/>
             </div>
