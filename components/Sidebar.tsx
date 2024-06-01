@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import Footer from './footer';
+import { Button } from './ui/button';
+import posthog from 'posthog-js';
 
 const Sidebar = ({ user }: SiderbarProps) => {
 
@@ -28,6 +30,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                         <p className={cn("sidebar-label", {"!text-white": isActive})}>
                             {item.label}
                         </p>
+                        <Button className='hidden' onClick={() => {posthog.capture('my event', { property: 'value' })}}/>
                     </Link>
                 )
             })}

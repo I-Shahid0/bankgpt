@@ -12,6 +12,7 @@ import { Loader2 } from "lucide-react";
 import { authFormSchema } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { signUp, signIn, getLoggedInUser } from "@/lib/actions/user.actions";
+import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: String }) => {
   const [user, setUser] = useState(null)
@@ -29,9 +30,21 @@ const AuthForm = ({ type }: { type: String }) => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsLoading(true)
     try {
-
+      
       if(type === 'sign-up'){
-        const newUser = await signUp(data)
+        const userData = {
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          email: data.email,
+          password:  data.password,
+          address1: data.address1!,
+          state: data.state!,
+          city: data.city!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+        }
+        const newUser = await signUp(userData)
         setUser(newUser)
       }
 
@@ -81,8 +94,8 @@ const AuthForm = ({ type }: { type: String }) => {
         </div>
       </header>
       {user ? (
-        <div className="flex flex-col gap-4">{/**/}</div>
-      ) : (
+        <div className="flex flex-col gap-4"><PlaidLink user={user} variant='primary'/></div>
+       ) : (
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -136,7 +149,7 @@ const AuthForm = ({ type }: { type: String }) => {
             
           </footer>
         </>
-      )}
+       )} 
     </section>
   );
 };
