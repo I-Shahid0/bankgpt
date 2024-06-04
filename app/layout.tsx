@@ -1,8 +1,9 @@
+export const dynamic = 'force-dynamic'
+
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import { PHProvider } from "./providers";
-import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexSerif = IBM_Plex_Serif({
@@ -11,9 +12,9 @@ const ibmPlexSerif = IBM_Plex_Serif({
   variable: "--font-ibm-plex-serif",
 });
 
-const PostHogPageView = dynamic(() => import("./PostHogPageView"), {
-  ssr: false,
-});
+// const PostHogPageView = d(() => import("./PostHogPageView"), {
+//   ssr: false,
+// });
 
 export const metadata: Metadata = {
   title: "Horizon",
