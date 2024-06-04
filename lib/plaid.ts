@@ -1,14 +1,10 @@
-import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid'
+const plaid = require('plaid');
+
+const client = new plaid.Client({
+  clientID: process.env.PLAID_CLIENT_ID,
+  secret: process.env.PLAID_SECRET,
+  env: plaid.environments.development,
+});
 
 
-const configuration = new Configuration({
-    basePath: PlaidEnvironments.sandbox,
-    baseOptions: {
-        headers: {
-            'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,
-            'PLAID-SECRET': process.env.PLAID_SECRET,
-        }
-    }
-})
-
-export const plaidClient = new PlaidApi(configuration)
+export const plaidClient = client
