@@ -60,7 +60,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type Transaction = {
@@ -79,7 +79,8 @@ declare type Transaction = {
   $createdAt: string;
   channel: string;
   senderBankId: string;
-  receiverBankId: string;
+  receiverBankId: string,
+  status: string
 };
 
 declare type Bank = {
@@ -89,7 +90,7 @@ declare type Bank = {
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type AccountTypes =
@@ -240,6 +241,9 @@ declare interface CategoryBadgeProps {
   category: string;
 }
 
+declare interface StatusBadgeProps {
+  pending: "true" | "false";
+}
 declare interface TransactionTableProps {
   transactions: Transaction[];
 }
@@ -314,7 +318,7 @@ declare interface createBankAccountProps {
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
-  sharableId: string;
+  shareableId: string;
 }
 
 declare interface getBanksProps {

@@ -91,6 +91,21 @@ export const topCategoryStyles = {
   },
 };
 
+export const transactionStatusStyles = {
+  true: {
+    borderColor: "border-[#F2F4F7]",
+    backgroundColor: "bg-gray-500",
+    textColor: "text-[#344054]",
+    chipBackgroundColor: "bg-[#F2F4F7]",
+  },
+  false: {
+    borderColor: "border-[#12B76A]",
+    backgroundColor: "bg-[#12B76A]",
+    textColor: "text-[#027A48]",
+    chipBackgroundColor: "bg-[#ECFDF3]",
+  },
+}
+
 export const transactionCategoryStyles = {
   "Food and Drink": {
     borderColor: "border-pink-600",
@@ -126,6 +141,12 @@ export const transactionCategoryStyles = {
     borderColor: "border-[#12B76A]",
     backgroundColor: "bg-[#12B76A]",
     textColor: "text-[#027A48]",
+    chipBackgroundColor: "bg-[#ECFDF3]",
+  },
+  Travel: {
+    borderColor: "border-[#0047AB]",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
     chipBackgroundColor: "bg-[#ECFDF3]",
   },
   default: {

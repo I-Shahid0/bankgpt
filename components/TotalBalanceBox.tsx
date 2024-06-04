@@ -3,7 +3,7 @@ import React from 'react'
 import AnimatedCounter from './AnimatedCounter'
 import DougnutChart from './DougnutChart'
 
-const TotalBalanceBox = ({ accounts = [], totalBanks, totalCurrentBalance }: TotlaBalanceBoxProps) => {
+const TotalBalanceBox = ({ accounts, totalBanks, totalCurrentBalance }: TotlaBalanceBoxProps) => {
     return (
         <section className='total-balance !gap-[5rem]'>
             <div className='total-balance-chart'>

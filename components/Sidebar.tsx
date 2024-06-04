@@ -8,6 +8,7 @@ import React from 'react'
 import Footer from './footer';
 import { Button } from './ui/button';
 import posthog from 'posthog-js';
+import PlaidLink from './PlaidLink';
 
 const Sidebar = ({ user }: SiderbarProps) => {
 
@@ -34,6 +35,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                     </Link>
                 )
             })}
+            <PlaidLink user={user}/>
         </nav>
         <Footer user={user}/>
     </section>

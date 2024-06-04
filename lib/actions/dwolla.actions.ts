@@ -87,7 +87,7 @@ export const createTransfer = async ({
       .post("transfers", requestBody)
       .then((res) => res.headers.get("location"));
   } catch (err) {
-    console.error("Transfer fund failed: ", err);
+    console.error("Transfer fund: ", err);
   }
 };
 
