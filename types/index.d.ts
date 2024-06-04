@@ -256,6 +256,17 @@ declare interface getTransactionsProps {
   accessToken: string;
 }
 
+declare interface Transaction1 {
+  transaction_id: string;
+  name: string;
+  payment_channel: string;
+  amount: number;
+  pending: boolean;
+  category?: string[];
+  date: string;
+  logo_url: string;
+  account_id: string;
+}
 declare interface CreateTransactionProps {
   name: string;
   amount: string;
