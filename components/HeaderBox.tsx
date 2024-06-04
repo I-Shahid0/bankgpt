@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 
 const HeaderBox = ({ type = "title", title, subtext, user }: HeaderBoxProps) => {
   return (
