@@ -1,4 +1,3 @@
-'use client'
 import BankCard from '@/components/BankCard';
 import HeaderBox from '@/components/HeaderBox'
 import { getAccounts } from '@/lib/actions/bank.actions';
@@ -19,7 +18,7 @@ const MyBanks = async () => {
             Your cards
           </h2>
           <div className="flex flex-wrap gap-6">
-            {accounts && accounts.data.map((a: Account) => (
+            {accounts && accounts.data?.map((a: Account) => (
               <BankCard
                 key={accounts.id}
                 account={a}
